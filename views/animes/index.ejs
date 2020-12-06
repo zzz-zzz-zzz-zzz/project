@@ -1,0 +1,10 @@
+<h2>Search for animes</h2>
+<form action="/animes" method="GET">
+    <label>Name</label>
+    <input type="text" name="name" value="<%= searchOptions.name %>">
+    <button type="submit">Search</button>
+</form>
+<br>
+<% animes.forEach(anime => { %>
+    <div><%= anime.name %></div>
+<% }) %>
