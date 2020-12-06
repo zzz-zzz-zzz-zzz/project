@@ -1,2 +1,24 @@
-<label>Name</label>
-<input type="text" name="name" value="<%= anime.name %>">
+<div>
+    <label>Title</label>
+    <input type="text" name="title" value="<%= anime.title %>">
+</div>
+<div>
+    <label>Description</label>
+    <textarea name="descr"><%= anime.descr %></textarea>
+</div>
+<div>
+    <label>Number of episodes</label>
+    <input type="number" name="eCount" min="0" value="<%= anime.eCount %>">
+</div>
+<div>
+    <label>Release Date</label>
+    <input type="date" name="rDate" value="<%= anime.rDate == null ? '' : anime.rDate.toISOString().split('T')[0] %>">
+</div>
+<div>
+    <label>Finished Airing</label>
+    <input type="date" name="fDate" value="<%= anime.fDate == null ? '' : anime.fDate.toISOString().split('T')[0] %>">
+</div>
+<div>
+    <label>Thumbnail</label>
+    <input type="file" name="cover">
+</div>
