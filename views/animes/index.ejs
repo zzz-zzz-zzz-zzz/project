@@ -12,11 +12,9 @@
 </form>
 <div>
     <% animes.forEach(anime => { %>
-       <img width="250" src="<%= anime.imgVPath %>">
+       <a href="/animes/<%= anime.id %>"><img width="240" src="<%= anime.imgVPath %>"></a>
        <div>
            <%= anime.title %>
-           <br>
-           <%= anime.rDate %>
        </div>
     <% }) %>
 </div>

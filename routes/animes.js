@@ -49,6 +49,15 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.get('/:id', async (req, res) => {
+    try {
+        const anime = await Anime.findById(req.params.id).exec()
+        res.render('animes/show', { anime: anime })
+    } catch {
+        res.redirect('/')
+    }
+})
+
 function saveThumb(anime, thumbEncoded) {
     if (thumbEncoded == null) return
     const thumb = JSON.parse(thumbEncoded)
