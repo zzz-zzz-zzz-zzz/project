@@ -1,7 +1,5 @@
 const mongoose = require('mongoose')
-const path = require('path')
 
-const imgPath = 'uploads/tImages'
 
 const animeSchema = new mongoose.Schema({
     title: {
@@ -16,35 +14,38 @@ const animeSchema = new mongoose.Schema({
         required: true
     },
     rDate: {
-        type: Date,
-        required: true
+        type: String,
     },
     fDate: {
-        type: Date
+        type: String,
     },
     cDate: {
         type: Date,
         required: true,
         default: Date.now
     },
-    imgName: {
+    thumbImage: {
+        type: Buffer,
+        required: true
+    },
+    thumbImageType: {
         type: String,
         required: true
     },
     rYear: {
         type: Number,
         default: function() {
-            return this.rDate.getFullYear()
+            if (this.rDate != '') return new Date(this.rDate).getFullYear()
+            else return 0
         }
     },
     tags: [String]
 })
 
 animeSchema.virtual('imgVPath').get(function() {
-    if (this.imgName != null) {
-        return path.join('/', imgPath, this.imgName)
+    if (this.thumbImage != null && this.thumbImageType != null) {
+        return `data:${this.thumbImageType};charset=utf-8;base64,${this.thumbImage.toString('base64')}`
     }
 })
 
 module.exports = mongoose.model('Anime', animeSchema)
-module.exports.imgPath = imgPath

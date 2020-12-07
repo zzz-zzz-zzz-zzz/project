@@ -12,13 +12,13 @@
 </div>
 <div>
     <label>Release Date</label>
-    <input type="date" name="rDate" value="<%= anime.rDate == null ? '' : anime.rDate.toISOString().split('T')[0] %>">
+    <input type="date" name="rDate" value="<%= anime.rDate %>">
 </div>
 <div>
     <label>Finished Airing</label>
-    <input type="date" name="fDate" value="<%= anime.fDate == null ? '' : anime.fDate.toISOString().split('T')[0] %>">
+    <input type="date" name="fDate" value="<%= anime.fDate %>">
 </div>
 <div>
     <label>Thumbnail</label>
-    <input type="file" name="cover">
+    <input type="file" class="filepond" name="cover">
 </div>
