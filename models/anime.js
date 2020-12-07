@@ -30,7 +30,14 @@ const animeSchema = new mongoose.Schema({
     imgName: {
         type: String,
         required: true
-    }
+    },
+    rYear: {
+        type: Number,
+        default: function() {
+            return this.rDate.getFullYear()
+        }
+    },
+    tags: [String]
 })
 
 animeSchema.virtual('imgVPath').get(function() {

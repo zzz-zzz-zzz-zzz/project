@@ -4,10 +4,19 @@
         <label>Title</label>
         <input type="text" name="title" value="<%= searchOptions.title %>">
     </div>
+    <div>
+        <label>Year</label>
+        <input type="number" name="year" min="1930" value="<%= searchOptions.year %>">
+    </div>
     <button type="submit">Search</button>
 </form>
 <div>
     <% animes.forEach(anime => { %>
        <img width="250" src="<%= anime.imgVPath %>">
+       <div>
+           <%= anime.title %>
+           <br>
+           <%= anime.rDate.toISOString().split('T')[0]%>
+       </div>
     <% }) %>
 </div>

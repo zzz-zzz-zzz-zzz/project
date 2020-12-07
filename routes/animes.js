@@ -15,13 +15,20 @@ const upload = multer({
 
 // All Animes Route
 router.get('/', async (req, res) => {
+    let query = Anime.find()
+    if (req.query.title != null && req.query.title != '') {
+        query = query.regex('title', new RegExp(req.query.title, 'i'))
+    }
+    if (req.query.year != null && req.query.year != '') {
+        query = query.where('rYear').equals(req.query.year)
+    }
     try {
-        const animes = await Anime.find({})
+        const animes = await query.exec()
         res.render('animes/index', {
             animes: animes,
             searchOptions: req.query
         })
-    } catch {
+    } catch (error) {
         res.redirect('/')
     }
 })
