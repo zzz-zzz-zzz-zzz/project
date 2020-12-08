@@ -1,20 +1,28 @@
-<h2>Search for animes</h2>
+<h2 class="main-h">Search for animes</h2>
 <form action="/animes" method="GET">
-    <div>
-        <label>Title</label>
-        <input type="text" name="title" value="<%= searchOptions.title %>">
+    <div class="form-row">
+        <div class="form-item">
+            <label>Title</label>
+            <input type="text" name="title" value="<%= searchOptions.title %>">
+        </div>
+        <div class="form-item">
+            <label>Year</label>
+            <input type="number" name="year" min="1930" value="<%= searchOptions.year %>">
+        </div>
     </div>
-    <div>
-        <label>Year</label>
-        <input type="number" name="year" min="1930" value="<%= searchOptions.year %>">
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Search</button>
     </div>
-    <button type="submit">Search</button>
 </form>
-<div>
+<br>
+
+<div class="anime-grid">
     <% animes.forEach(anime => { %>
-       <a href="/animes/<%= anime.id %>"><img width="240" src="<%= anime.imgVPath %>"></a>
-       <div>
-           <%= anime.title %>
-       </div>
+    <figure class="sign">
+        <a href="/animes/<%= anime.id %>"><img width="240" src="<%= anime.imgVPath %>"></a>
+        <figcaption>
+            <h3><%= anime.title %></h3>
+        </figcaption>
+    </figure>
     <% }) %>
 </div>

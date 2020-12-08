@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #2F303A;
+    font-family: Poppins, sans-serif;
+    font-size: 1, 2rem;
+    min-height: 100vh;
+    color: black;
+}
+
+.full-height-grow {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo img {
+    height: 50px;
+    width: 50px;
+}
+
+.main-nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+.main-nav a:hover {
+    color: #adadad;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 140px;
+    font-size: large;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 3rem;
+    color: black;
+}
+
+.inner-container {
+    margin: 0 2rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.main-h {
+   
+    text-align: center;
+}
+
+/*BUTTONS*/
+
+:root {
+    --color-base-hue:220;
+    --color-btn-primary-background: hsl(var(--color-base-hue),100%,83%);
+    --color-btn-primary-text: hsl(var(--color-base-hue),100%,20%);
+    --color-btn-primary-background-dark: hsl(var(--color-base-hue),100%,73%);
+    --color-btn-primary-text-dark: hsl(var(--color-base-hue),100%,10%);
+    --color-btn-border: black;
+}
+.btn {
+    border: 1px solid var(--color-btn-border);
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    font-size: 1.3rem;
+    font-family: "Poppins";
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-primary {
+    color: var(--color-btn-primary-text);
+    background-color: var(--color-btn-primary-background);
+}
+.btn-primary:hover {
+    color: var(--color-btn-primary-text-dark);
+    background-color: var(--color-btn-primary-background-dark);
+}
+
+.btn-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.btn row > * {
+    margin-left: 1rem;
+}
+
+.btn row > *:first-child {
+    margin-left: 0;
+}
+
+/*FORM*/
+
+.form-row {
+    display: flex;
+    margin-bottom: .5rem;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.form-item:first-child{
+    margin-left: 0;
+}
+
+.form-item-no-grow {
+    flex-grow: 0;
+}
+
+.form-item > label {
+    font-size: 1.2rem;
+    margin-bottom: .25rem;
+    margin-left: .25rem;
+}
+
+.form-item input, .form-tem select, .form-item textarea {
+    height: 2rem;
+    padding: .25rem .5rem;
+    border-radius: .25rem;
+    border: 1px solid hsl(0, 0%, 0%);
+    background-color: hsl(240, 5%, 45%);
+    color: black;
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: "Poppins";
+    outline: none;
+}
+
+.form-item textarea {
+    height: 100%;
+    resize: none;
+}
+.form-item input:focus, .form-item select:focus, .form-item textarea:focus {
+    border-color: hsl(60, 5%, 4%);
+}
+
+.form-row-end {
+    justify-content: flex-end;
+  }
+
+  /*FILEPOND*/
+.filepond--root {
+    font-family: "Poppins";
+    margin-bottom: 0;
+}
+
+.filepond--panel-root {
+    background-color: hsl(240, 5%, 45%);
+    border: 1px solid hsl(60, 5%, 4%);
+}
+.filepond--drop-label {
+    color: black;
+    font-size: inherit;
+}
+/*ANIME*/
+
+.anime-row {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+
+.anime-cover {
+    width: 325px;
+    height: 435px;
+}
+
+.anime-grid {
+    display: grid;
+    justify-self: center;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, 325px);
+
+}
+
+.anime-show {
+    text-align: left;
+    font-family: "Poppins";
+}
+
+.anime-show img {
+    border-radius: 0.5rem;
+}
+.anime-show h3 {
+    text-align: center;
+}
+.sign {
+    text-align: center;
+    padding: 7px; /* Поля внутри блока */
+    margin: 10px 0 5px 5px; /* Отступы вокруг */ 
+   }
+
+   .sign img{
+        border-radius: 0.5rem;
+   }
+   .sign figcaption {
+    margin: 0 auto 5px; /* Отступы вокруг абзаца */
+   }
+   /*ERROR*/
+   .error-message {
+       color:hsl(0,100%,50%);
+   }
+
+#myInput {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+#myUL {
+
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#myUL li a {
+    border: 1px solid #ddd;
+    /* Add a border to all links */
+    margin-top: -1px;
+    /* Prevent double borders */
+    background-color: #f6f6f6;
+    /* Grey background color */
+    padding: 12px;
+    /* Add some padding */
+    text-decoration: none;
+    /* Remove default text underline */
+    font-size: 18px;
+    /* Increase the font-size */
+    color: black;
+    /* Add a black text color */
+    display: block;
+    /* Make it into a block element to fill the whole list */
+}
+
+#myUL li a:hover:not(.header) {
+    background-color: #eee;
+    /* Add a hover effect to all links, except for headers */
+}
