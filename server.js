@@ -8,8 +8,10 @@ const expressLayouts = require('express-ejs-layouts')
 const mongoose = require('mongoose')
 const indexRouter = require('./routes/index')
 const animesRouter = require('./routes/animes')
+const authRouter = require('./routes/auth')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
+global.loggedIn = false
 
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
@@ -29,5 +31,6 @@ app.use(bodyParser.urlencoded({limit: '10mb', extended: false}))
 app.use(methodOverride('_method'))
 app.use('/', indexRouter)
 app.use('/animes', animesRouter)
+app.use('/auth', authRouter)
 
 app.listen(process.env.PORT || 3000)

@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const Anime = require('../models/anime')
-const anime = require('../models/anime')
 const imageMimeTypes = ['image/jpeg', 'image/png', 'image/gif']
 
 // All Animes Route
@@ -41,8 +40,7 @@ router.post('/', async (req, res) => {
     saveThumb(anime, req.body.cover)
     try {
         const newAnime = await anime.save()
-        // res.redirect('animes/${newAnime.id}')
-        res.redirect('animes')
+        res.redirect(`animes/${newAnime.id}`)
     } catch (err){
         console.log(err)
         renderNewPage(res, anime, true)
@@ -79,6 +77,5 @@ async function renderNewPage(res, anime, hasError = false) {
         res.redirect('/animes')
     }
 }
-
 
 module.exports = router
